@@ -1,0 +1,7 @@
+Dalam test case ini adalah menggunakan method post untuk menginputkan data pelajar 
+secara local.
+Data yang harus dilengkapi seperti nama, alamat yang berupa field text
+Gender yang berupa radio button dengan props
+Daerah yang berupa autocomplete field dengan subcomponent berupa suggestion
+Tanggal lahir berupa datepicker
+
