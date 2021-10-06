@@ -24,7 +24,6 @@
                 </b-collapse>
             </div>
         </form>
-        <text-field />
     </div>
 </template>
 

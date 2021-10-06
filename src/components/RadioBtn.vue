@@ -1,20 +1,23 @@
 <template>
-    <div>
-        <b-field>
-            <b-radio :v-model="radioButton"
-                :native-value="radioButton"
-                name="gender"
-                v-for="(choice, id) in choices" :key="id"
-                class="mr-4"
-            >
-                <span class="pl-1"> {{ choice }} </span>
-            </b-radio>
-        </b-field>
-    </div>
+    <label :for="option" class="mr-6">
+        <input
+            type="radio"
+            :value="option"
+            :id="option"
+            @change="$parent.$emit('input', $event.target.value)"
+            name="radio-input"
+        />
+        {{ option }}
+    </label>
 </template>
 
 <script>
- export default {
-    props: ['choices', 'radioButton'],
- }
+export default {
+  props: {
+    option: {
+      required: true,
+      type: String,
+    },
+  },
+};
 </script>

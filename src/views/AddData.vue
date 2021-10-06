@@ -12,11 +12,11 @@
           placeholder="Masukan alamat pelanggan"> </textarea>
       </div>
       <div class="form-group mb-3">
-        <label for="address">Gender</label>
-        <RadioBtn v-bind:choices="student.choices" :radioButton="student.gender"/>
+        <label for="gender" class="mb-1">Gender</label>
+        <BaseRadioButtonGroup :options="student.choices" v-model="student.gender" />
       </div>
       <div class="form-group mb-3">
-        <label for="address">Daerah Kota</label>
+        <label for="city">Daerah Kota</label>
         <b-field>
             <b-autocomplete
                 v-model="student.searchName"
@@ -47,12 +47,12 @@
 </template>
 
 <script>
-    import RadioBtn from "../components/RadioBtn.vue"
+    import BaseRadioButtonGroup from "../components/RadioBtnGroup.vue"
 
     export default {
         name: 'student-form', 
         components:{
-            RadioBtn
+            BaseRadioButtonGroup
         },
         data(){
             return {
@@ -62,9 +62,10 @@
                     choices: [ 'Male', 'Female'],
                     gender: '',
                     searchName: '',
-                    selectedDate: new Date(),
+                    selectedDate: null,
                     showWeekNumber: false,
                 },
+                selectedGender: '',
                 selected: null,
                 searchData: [
                     'Jawa Timur',
@@ -75,7 +76,7 @@
                     'Sulawesi',
                     'NTT',
                     'NTB',
-                ]
+                ],
             }
         },
         computed: {
